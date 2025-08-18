@@ -1,0 +1,19 @@
+declaration use to modify global methods 
+
+it has abbrevation of '.d.tsc'
+
+
+usecase - extending 'Request' object of 'express'
+
+import { Request } from 'express';
+
+declare module 'express-serve-static-core' {
+    interface Request {
+        user?: { 
+            _id: string,
+             role: 'organizer' | 'guest' 
+            } 
+        cookies: {refreshToken?: string}
+        query: {page?: number}
+    } 
+}
